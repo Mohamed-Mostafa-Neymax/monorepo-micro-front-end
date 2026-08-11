@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>Employee Form</h2>
+<mat-dialog-content>
+    <form [formGroup]="employeeForm">
+        <mat-form-field>
+            <mat-label>Enter your name</mat-label>
+            <input matInput formControlName="name">
+            @if (employeeForm.get('name')?.invalid) {
+                <mat-error>Name is <strong>required</strong></mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Enter your email</mat-label>
+            <input matInput formControlName="email">
+            @if (employeeForm.get('email')?.invalid) {
+                <mat-error>Email is <strong>required</strong></mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Select a department</mat-label>
+            <mat-select formControlName="department">
+                <mat-option value="HR">HR</mat-option>
+                <mat-option value="IT">IT</mat-option>
+                <mat-option value="Finance">Finance</mat-option>
+                <mat-option value="Marketing">Marketing</mat-option>
+                <mat-option value="Operations">Operations</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-slide-toggle [checked]="false" formControlName="isActive">Status</mat-slide-toggle>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button matButton mat-dialog-close>Cancel</button>
+    <button
+        matButton
+        cdkFocusInitial
+        [disabled]="employeeForm.invalid"
+        [class.disabledBtn]="employeeForm.invalid"
+        (click)="onSave()">
+        Submit
+    </button>
+</mat-dialog-actions>

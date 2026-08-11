@@ -1,0 +1,17 @@
+<h2>{{ title() }}</h2>
+<section>
+    <div>
+        <h3>Company Information</h3>
+        @for(coInfoItem of companyInfo; track 'coInfoItem_' + coInfoItem.title;) {
+            <div>
+                <p>{{ coInfoItem.title }}</p>
+                <p>{{ coInfoItem.answer }}</p>
+            </div>
+        }
+    </div>
+    <div>
+        <!-- @for(infoItem of information; track 'infoItem_' + infoItem.id;) {
+            <shared-summary-card [summaryData]="infoItem" />
+        } -->
+    </div>
+</section>

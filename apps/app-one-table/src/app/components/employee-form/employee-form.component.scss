@@ -1,0 +1,19 @@
+.disabledBtn {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+button:last-child {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+}
+
+::ng-deep {
+    .mat-mdc-select-panel {
+        background-color: var(--white-color) !important;
+    }
+
+    .mat-mdc-form-field-error {
+        color: var(--red-color);
+    }
+} 

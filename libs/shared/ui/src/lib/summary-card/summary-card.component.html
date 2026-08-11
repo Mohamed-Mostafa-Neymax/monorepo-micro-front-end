@@ -1,0 +1,25 @@
+<div class="summary-card" [style.backgroundColor]="summaryData().bgColor">
+    @if (summaryData().icon) {
+    <div [style]="{
+            'border-radius': summaryData().isRounded ? '50%' : '0.7rem',
+            'background-color': summaryData().iconBg
+        }">
+        <mat-icon>{{ summaryData().icon }}</mat-icon>
+    </div>
+    }
+    <div>
+        <h2>{{ summaryData().title }}</h2>
+        @if (summaryData().subTitle) {
+        <h4>{{ summaryData().subTitle }}</h4>
+        }
+        @if (summaryData().description) {
+        <p>{{ summaryData().description }}</p>
+        }
+        @if (summaryData().navigateTo) {
+        <button type="button" matButton (click)="onNavigateProject(summaryData().navigateTo)"
+            [style.backgroundColor]="summaryData().iconBg">
+            <span>Go to {{ summaryData().title }}</span> <mat-icon>arrow_forward</mat-icon>
+        </button>
+        }
+    </div>
+</div>

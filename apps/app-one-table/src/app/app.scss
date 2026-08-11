@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        margin-top: 0;
+    }
+
+    button {
+        color: var(--white-color);
+        background-color: var(--blue-color);
+        border-radius: 0.5rem;
+        gap: 1rem;
+    }
+}

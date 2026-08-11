@@ -1,0 +1,12 @@
+<h2>{{ title() }}</h2>
+<h4>Here is an overview of your application</h4>
+<div class="statistics">
+    @for(statisticItem of statistics; track 'statisticItem_' + statisticItem.id;) {
+        <shared-summary-card [summaryData]="statisticItem" />
+    }
+</div>
+<div class="projects">
+    @for(projectItem of projects; track 'projectItem_' + projectItem.id;) {
+        <shared-summary-card [summaryData]="projectItem" />
+    }
+</div>

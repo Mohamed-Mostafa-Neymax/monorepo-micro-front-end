@@ -1,0 +1,33 @@
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    div:first-child {
+        border-radius: 0.8rem;
+        border: 1px solid var(--gray-color);
+
+        h3 {
+            color: var(--blue-color);
+            background-color: var(--light-blue-color);
+            padding: 18px 1rem;
+            margin: 0;
+            border-top-left-radius: 0.8rem;
+            border-top-right-radius: 0.8rem;
+        }
+
+        div {
+            margin: 0 1rem;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            &:not(:last-child) {
+                border-bottom: 1px solid var(--gray-color);
+            }
+        }
+    }
+}
+
+h2 {
+    margin-top: 0;
+}

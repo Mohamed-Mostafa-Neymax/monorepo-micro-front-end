@@ -1,0 +1,52 @@
+a {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0.75rem;
+    margin: 0 0.75rem 0.75rem;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--black-color);
+    border-radius: 1rem;
+
+    p {
+        margin: 0;
+    }
+
+    &:not(.activeLink) p:last-child {
+        color: var(--dark-gray-color);
+        font-size: 18px;
+    }
+
+    &.activeLink {
+        color: var(--blue-color);
+        background-color: var(--light-blue-color);
+    }
+}
+
+button {
+    background-color: #0B36B2;
+    color: #fff;
+    border-radius: 7px;
+    display: block;
+}
+
+::ng-deep {
+    .mat-drawer-container {
+        height: 100%;
+        
+        .mat-drawer-side {
+            border-right: 1px solid var(--gray-color);
+            margin-top: 2.5rem;
+        }
+
+        section {
+            padding: 0 2.5rem;
+        }
+    }
+
+    button {
+        .mat-icon {
+            width: 1.2rem;
+        }
+    }
+}

@@ -7,6 +7,45 @@
   "tags": [],
   "targets": {
     "build": {
+      "executor": "@angular-architects/native-federation:build",
+      "defaultConfiguration": "production",
+      "options": {
+        "cacheExternalArtifacts": true
+      },
+      "configurations": {
+        "production": {
+          "target": "company-portal:esbuild:production"
+        },
+        "development": {
+          "target": "company-portal:esbuild:development",
+          "dev": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@angular-architects/native-federation:build",
+      "options": {
+        "target": "company-portal:serve-original:development",
+        "rebuildDelay": 500,
+        "cacheExternalArtifacts": true,
+        "dev": true,
+        "devServer": true,
+        "port": 0
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "company-portal:build",
+        "staticFilePath": "dist/apps/company-portal/browser",
+        "spa": true
+      }
+    },
+    "esbuild": {
       "executor": "@angular/build:application",
       "outputs": [
         "{options.outputPath}"
@@ -25,6 +64,9 @@
         ],
         "styles": [
           "apps/company-portal/src/styles.scss"
+        ],
+        "polyfills": [
+          "es-module-shims"
         ]
       },
       "configurations": {
@@ -50,29 +92,20 @@
         }
       }
     },
-    "serve": {
+    "serve-original": {
       "continuous": true,
       "executor": "@angular/build:dev-server",
       "defaultConfiguration": "development",
+      "options": {
+        "port": 4200
+      },
       "configurations": {
         "production": {
-          "buildTarget": "company-portal:build:production"
+          "buildTarget": "company-portal:esbuild:production"
         },
         "development": {
-          "buildTarget": "company-portal:build:development"
+          "buildTarget": "company-portal:esbuild:development"
         }
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
-    "serve-static": {
-      "continuous": true,
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "company-portal:build",
-        "staticFilePath": "dist/apps/company-portal/browser",
-        "spa": true
       }
     }
   }

@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+
+import { ShellLayoutComponent } from './core/layout/components/shell-layout/shell-layout.component';
 
 @Component({
-  imports: [NxWelcome, RouterModule],
+  imports: [RouterModule, ShellLayoutComponent],
   selector: 'app-root',
   templateUrl: './app.html',
-  styleUrl: './app.scss',
+  styleUrl: './app.scss'
 })
-export class App {
-  protected title = 'company-portal';
-}
+export class App {}

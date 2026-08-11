@@ -1,0 +1,15 @@
+nav {
+    height: 4rem;
+    padding: 0 1.5rem;
+    color: var(--white-color);
+    background-color: var(--blue-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .user {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}

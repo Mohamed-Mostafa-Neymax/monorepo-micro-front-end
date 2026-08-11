@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --blue-color: #0B36B2;
+    --light-blue-color: #F3F6FE;
+    --green-color: #2A9B44;
+    --light-green-color: #F5FCF7;
+    --light-green-color-2: #DBF4E4;
+    --light-green-color-3: #679F7B;
+    --gray-color: #dbdbdb;
+    --dark-gray-color: #AFB2C1;
+    --orange-color: #F17623;
+    --purple-color: #5347D3;
+    --red-color: #ff0000;
+    --red-color-2: #FEE9EB;
+    --red-color-3: #DF9399;
+    --black-color: #000;
+    --white-color: #fff;
+}
+
+html, body { height: 100%; }
+body {
+    margin: 0; 
+    font-family: Arial, Helvetica, sans-serif;
+}

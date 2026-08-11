@@ -1,0 +1,23 @@
+<mat-drawer-container autosize>
+    <mat-drawer #drawer mode="side" opened>
+        @for(sideItem of sidebarItems; track 'sideItem_' + sideItem.id;) {
+            <a
+                [routerLink]="sideItem.route"
+                routerLinkActive="activeLink"
+                [routerLinkActiveOptions]="{exact: $index === 0 ? true : false}">
+                <mat-icon>{{ sideItem.iconName }}</mat-icon>
+                <div>
+                    <span>{{ sideItem.title }}</span>
+                    <p>{{ sideItem.description }}</p>
+                </div>
+            </a>
+        }
+    </mat-drawer>
+
+    <button type="button" mat-mini-fab (click)="onToggleSideMenu(drawer)">
+        <mat-icon>{{ isSidebarOpened() ? 'arrow_back_ios' : 'arrow_forward_ios' }}</mat-icon>
+    </button>
+    <section>
+        <ng-content />
+    </section>
+</mat-drawer-container>
