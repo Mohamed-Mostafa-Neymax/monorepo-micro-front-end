@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
+import { SummaryCardComponent } from '@ng-monorepo-micro-fe-workspace/ui';
 
-import { SummaryCardComponent } from '../../../../libs/shared/ui/src/lib/summary-card/summary-card.component';
+// import { SummaryCardComponent } from '../../../../libs/shared/ui/src/lib/summary-card/summary-card.component';
 import { RIGHT_CARDS, COMPANY_INFO } from './models/information.model';
 
 @Component({

@@ -16,8 +16,8 @@ import { EmployeeService } from './services/employee.service';
 })
 export class App {
   private employeeService = inject(EmployeeService);
-  readonly dialog = inject(MatDialog);
-  readonly destroyRef = inject(DestroyRef);
+  private destroyRef = inject(DestroyRef);
+  private dialog = inject(MatDialog);
   title = input.required<string>();
 
   onAddRecord() {

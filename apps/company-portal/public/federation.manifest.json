@@ -1,4 +1,5 @@
 {
     "app-one-table": "http://localhost:4201/remoteEntry.json",
-    "app-two-info": "http://localhost:4202/remoteEntry.json"
+    "app-two-info": "http://localhost:4202/remoteEntry.json",
+    "app-three-orders": "http://localhost:4203/remoteEntry.json"
 }

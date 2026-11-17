@@ -8,6 +8,7 @@
   "targets": {
     "build": {
       "executor": "@angular-architects/native-federation:build",
+      "defaultConfiguration": "production",
       "options": {
         "cacheExternalArtifacts": true
       },
@@ -19,8 +20,7 @@
           "target": "app-two-info:esbuild:development",
           "dev": true
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@angular-architects/native-federation:build",
@@ -96,6 +96,9 @@
       "continuous": true,
       "executor": "@angular/build:dev-server",
       "defaultConfiguration": "development",
+      "options": {
+        "port": 4202
+      },
       "configurations": {
         "production": {
           "buildTarget": "app-two-info:esbuild:production"
@@ -103,9 +106,6 @@
         "development": {
           "buildTarget": "app-two-info:esbuild:development"
         }
-      },
-      "options": {
-        "port": 4202
       }
     }
   }

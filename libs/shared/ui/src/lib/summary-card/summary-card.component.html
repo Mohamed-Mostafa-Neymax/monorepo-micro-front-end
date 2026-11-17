@@ -1,6 +1,13 @@
-<div class="summary-card" [style.backgroundColor]="summaryData().bgColor">
+<div
+    class="summary-card"
+    [style]="{
+        backgroundColor: summaryData().bgColor,
+        display: summaryData().icon ? 'flex' : 'block'
+    }">
     @if (summaryData().icon) {
-    <div [style]="{
+    <div
+        class="card-icon"
+        [style]="{
             'border-radius': summaryData().isRounded ? '50%' : '0.7rem',
             'background-color': summaryData().iconBg
         }">

@@ -17,5 +17,10 @@ export const appRoutes: Route[] = [
         path: 'app-two',
         loadComponent: () => loadRemoteModule('app-two-info', './Component-App-Two').then(m => m.App),
         data: { title: 'App Two - Information' }
+    },
+    {
+        path: 'app-three',
+        loadComponent: () => loadRemoteModule('app-three-orders', './Component-App-Three').then(m => m.App),
+        data: { title: 'App Three - Orders' }
     }
 ];

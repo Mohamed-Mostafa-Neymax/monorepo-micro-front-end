@@ -9,9 +9,7 @@
             </div>
         }
     </div>
-    <div>
-        <!-- @for(infoItem of information; track 'infoItem_' + infoItem.id;) {
-            <shared-summary-card [summaryData]="infoItem" />
-        } -->
-    </div>
+    @for(infoItem of information; track 'infoItem_' + infoItem.id;) {
+        <shared-summary-card [summaryData]="infoItem" />
+    }
 </section>
